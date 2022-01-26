@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}About{% endblock %}
+
+
+{% block body %}
+
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <p class="text-center">
+            <div class="text-center h5" style="color:white;">We Are</div>
+            <div class="text-center h2" style="color:white;">MUDS</div>
+        </p>
+        <p class="text-center" style="color:white;">MUDS trained over large datasets, allowing our machine learning algorithms to detect malicious URLs and suspicious links faster than any other service. </p>
+    </div>
+</div>
+
+<div class="container-fluid position-relative p-5 mx-3">
+    <div class="row">
+        <div class="col-6">
+            <div class="card bg-transparent" style="border-radius: 10px;">
+              <div class="card-body" >
+                <h5 class="card-title" style="color:white;">MWCDS</h5>
+                <h6 class="card-subtitle mb-2 text-muted" style="color:white;">Malicious URL Detection System</h6>
+                  <p class="card-text" style="color:white;">Using the malicious URL checker tool can quickly analyze if a link is suspicious or unsafe. Real-time scanning of links is best if your goal is to block malware or prevent phishing link clicks. Scan URLs online now with this free tool.</p>
+                <p class="card-text" style="color:white;">Scan URLs for malware with trusted accuracy. Follow all redirects and cloaking measures to identify the true destination URL. MUDS tracks behavior traits and forensic details of known suspicious links, to safely analyze URLs with AI and machine learning techniques — while avoiding false-positives and user experience issues. </p>
+                <a href="{% url 'home' %}" class="card-link" style="font-family: Arial, Helvetica, sans-serif;">Start Use It Now</a>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            {% load static %}
+            <img class="card-img" style="border-radius: 8px; height: 82%;" src="{% static 'gg/im12.jpg' %}" alt="My image">
+        </div>
+    </div>
+</div>
+
+{% endblock %}

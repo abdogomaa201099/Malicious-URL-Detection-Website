@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Update{% endblock %}
+
+
+{% block body %}
+
+<div class="h-90 mt-5 position-relative ">
+    <div class="container h-100 ">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card " style="border-radius: 15px; ">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Update Account Info</h2>
+
+                <form method="POST" action=".">
+                {%csrf_token%}
+                    <div class="form-outline mb-4">
+                    {{form.username}}
+                  <label name="username" class="form-label" for="username">Your Name</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  {{form.email}}
+                  <label name="email" class="form-label" for="email">Your Email</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                 {{form.password1}}
+                  <label name="password1" class="form-label" for="Password1">Password</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  {{form.password2}}
+                  <label name="password2" class="form-label" for="Password2">Repeat your password</label>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button  type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Update</button>
+                </div>
+                <br>
+                    {% if messages %}
+                    <ul class="messages">
+                    {% for message in messages %}
+                        <div class="alert alert-success" role="alert">
+                            <li> {{ message }} </li>
+                        </div>
+
+                    {% endfor %}
+                    </ul>
+                    {% endif %}
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

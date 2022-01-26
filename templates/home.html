@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+
+
+
+
+{% block body %}
+
+<!-- Input Field -->
+<form action="." method="post">
+    {%csrf_token%}
+  <div class="container position-absolute top-50 start-50 translate-middle w-50">
+    <div class="row justify-content-md-center">
+        <div class="input-group-text bg-transparent">
+              <input type="text" name="url" class="form-control bg-light bg-gradient m-1" placeholder="Website URL" style="opacity:0.8;" required>
+              <button class="btn btn-outline-secondary bg-light bg-gradient" style="opacity:0.9;"type="submit" >Detect</button>
+        </div>
+    </div>
+         <div class="row justify-content-center p-2">
+
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="row justify-content-center" style="color:white;" role="alert">
+                             {{ message }}
+                        </div>
+                    {% endfor %}
+
+             {%else%}
+                 <div class="row justify-content-center"  >
+                      <a class="row justify-content-center" href="{% url 'showpdf' %}"> Generate Report</a>
+                 </div>
+             {%endif%}
+         </div>
+</div>
+</form>
+<!-- End Of Input Field -->
+{% endblock %}
+

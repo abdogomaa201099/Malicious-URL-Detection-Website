@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="C:/Users/abdog/Desktop/Django_Projects/PSM/static/bootstrap/css.css">
+    <title>Reports</title>
+</head>
+
+<body>
+
+  <div class="container ">
+            <h1 class="pagination-centered ">
+              MUDS
+            </h1>
+  </div>
+        <div>
+            Report ID # {{report_id}}<br/>
+            Url:  {{url}}<br/>
+            Entered By: {{username}}<br/>
+            User ID: {{UserID}}<br/>
+            <hr />
+        </div>
+
+        <div>
+            <p class="pagination-centered">The url entered has been classified as: <b>{{res}}</b> </p>
+            <br/>
+            <p>The model detect the url as a <b>Secure</b> with probability of: <b>{{good_prob}}</b></p>
+            <p>The model detect the url as a <b>Unsecure</b> with probability of:  <b>{{bad_prob}}</b></p>
+            <img class="" src="{{path}}" >
+
+        </div>
+    </body>
+</html>
